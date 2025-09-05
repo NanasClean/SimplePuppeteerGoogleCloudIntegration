@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "This is a simple puppeteer web scrapper integrated with google cloud functions",
   "main": "index.js",
+  "engines": {
+    "node": ">=19"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "functions-framework --target=getWebsiteData",
+    "gcp-build": "PUPPETEER_CACHE_DIR=/workspace/.cache/puppeteer npx puppeteer browsers install chrome"
   },
   "author": "Salogod",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^24.19.0"
+    "@google-cloud/functions-framework": "^4.0.0",
+    "puppeteer": "^24.19.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
 }
